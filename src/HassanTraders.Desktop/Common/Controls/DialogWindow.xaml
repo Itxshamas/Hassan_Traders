@@ -1,0 +1,47 @@
+<Window
+  x:Class="HassanTraders.Desktop.Common.Controls.DialogWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  AllowsTransparency="True"
+  Background="Transparent"
+  ResizeMode="NoResize"
+  ShowInTaskbar="False"
+  SizeToContent="Height"
+  WindowStartupLocation="CenterOwner"
+  WindowStyle="None"
+  Width="460">
+  <!-- Margin leaves room for the drop shadow. Enter confirms, Esc cancels. -->
+  <Border Margin="24,16,24,32" Style="{StaticResource Dialog.Card}">
+    <StackPanel>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border
+          x:Name="IconHolder"
+          Width="44"
+          Height="44"
+          Margin="0,0,16,0"
+          VerticalAlignment="Top"
+          CornerRadius="22">
+          <ui:SymbolIcon x:Name="Glyph" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource Icon.Large}" />
+        </Border>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+          <TextBlock x:Name="TitleText" Style="{StaticResource Text.Section}" TextWrapping="Wrap" />
+          <TextBlock x:Name="MessageText" Margin="0,8,0,0" Style="{StaticResource Text.Secondary}" />
+        </StackPanel>
+      </Grid>
+      <StackPanel Margin="0,28,0,0" HorizontalAlignment="Right" Orientation="Horizontal">
+        <Button
+          x:Name="CancelButton"
+          MinWidth="96"
+          Margin="0,0,12,0"
+          Click="OnCancel"
+          IsCancel="True" />
+        <Button x:Name="ConfirmButton" MinWidth="96" Click="OnConfirm" IsDefault="True" />
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>

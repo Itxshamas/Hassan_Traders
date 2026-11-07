@@ -1,0 +1,31 @@
+<UserControl
+  x:Class="HassanTraders.Desktop.Common.Controls.StatusBanner"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+  <!-- Inline message bar: success, warning, error or info. Collapses when Message is empty. -->
+  <Border
+    x:Name="Bar"
+    Padding="14,10"
+    BorderThickness="1"
+    CornerRadius="{DynamicResource Radius.Control}">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <ui:SymbolIcon
+        x:Name="Glyph"
+        Margin="0,2,12,0"
+        VerticalAlignment="Top"
+        FontSize="{DynamicResource Icon.Medium}" />
+      <TextBlock
+        x:Name="Body"
+        Grid.Column="1"
+        VerticalAlignment="Center"
+        FontSize="{DynamicResource FontSize.Body}"
+        Text="{Binding Message, RelativeSource={RelativeSource AncestorType=UserControl}}"
+        TextWrapping="Wrap" />
+    </Grid>
+  </Border>
+</UserControl>

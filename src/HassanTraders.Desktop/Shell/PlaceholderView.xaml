@@ -1,0 +1,17 @@
+<UserControl
+  x:Class="HassanTraders.Desktop.Shell.PlaceholderView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="clr-namespace:HassanTraders.Desktop.Common.Controls">
+  <!-- Honest empty state for a module that is not built yet. -->
+  <Grid Margin="{DynamicResource Pad.Page}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <controls:PageHeader Title="{Binding Title}" />
+    <Border Grid.Row="1" Style="{StaticResource Card}">
+      <controls:StateView Message="{Binding Message}" Title="{Binding Title}" IconName="Clock24" />
+    </Border>
+  </Grid>
+</UserControl>

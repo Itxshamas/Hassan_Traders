@@ -1,0 +1,52 @@
+<UserControl
+  x:Class="HassanTraders.Desktop.Common.Controls.StateView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+  <!-- Centered empty / loading / error placeholder with optional action (set Action to a Button). -->
+  <StackPanel
+    MaxWidth="420"
+    Margin="24"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center">
+    <Border
+      x:Name="IconHolder"
+      Width="64"
+      Height="64"
+      Margin="0,0,0,16"
+      HorizontalAlignment="Center"
+      CornerRadius="32">
+      <Grid>
+        <ui:SymbolIcon
+          x:Name="Glyph"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          FontSize="{DynamicResource Icon.Large}" />
+        <ui:ProgressRing
+          x:Name="Ring"
+          Width="32"
+          Height="32"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          IsIndeterminate="True"
+          Visibility="Collapsed" />
+      </Grid>
+    </Border>
+    <TextBlock
+      HorizontalAlignment="Center"
+      Style="{StaticResource Text.Section}"
+      Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"
+      TextAlignment="Center"
+      TextWrapping="Wrap" />
+    <TextBlock
+      Margin="0,8,0,0"
+      HorizontalAlignment="Center"
+      Style="{StaticResource Text.Secondary}"
+      Text="{Binding Message, RelativeSource={RelativeSource AncestorType=UserControl}}"
+      TextAlignment="Center" />
+    <ContentPresenter
+      Margin="0,20,0,0"
+      HorizontalAlignment="Center"
+      Content="{Binding Action, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+  </StackPanel>
+</UserControl>

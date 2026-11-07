@@ -1,0 +1,104 @@
+<UserControl
+  x:Class="HassanTraders.Desktop.Features.Dashboard.DashboardView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:wpf="clr-namespace:HassanTraders.Desktop.Common.Helpers"
+  xmlns:controls="clr-namespace:HassanTraders.Desktop.Common.Controls">
+
+  <UserControl.Resources>
+    <!-- One row of a breakdown chart: label, count, bar. -->
+    <DataTemplate x:Key="BarRowTemplate">
+      <Grid Margin="0,0,0,12">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Style="{StaticResource Text.Body}" Text="{Binding Label}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" />
+        <TextBlock Grid.Column="1" Style="{StaticResource Text.Number}" FontWeight="SemiBold" Text="{Binding Count}" />
+        <ProgressBar Grid.Row="1" Grid.ColumnSpan="2" Margin="0,6,0,0" Maximum="{Binding Max}" Value="{Binding Count, Mode=OneWay}" />
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+      </Grid>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Grid Margin="{DynamicResource Pad.Page}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <controls:PageHeader Title="{Binding Title}" Subtitle="{Binding Subtitle}" />
+
+    <!-- Loading and error -->
+    <Border Grid.Row="1" Style="{StaticResource Card}" Visibility="{Binding ShowLoading, Converter={StaticResource BoolToVisibility}}">
+      <controls:StateView Kind="Loading" Title="{wpf:T Items_LoadingTitle}" Message="{wpf:T Items_LoadingMessage}" />
+    </Border>
+    <Border Grid.Row="1" Style="{StaticResource Card}" Visibility="{Binding ShowError, Converter={StaticResource BoolToVisibility}}">
+      <controls:StateView Kind="Error" Title="{wpf:T Dashboard_ErrorTitle}" Message="{wpf:T Items_ErrorMessage}">
+        <controls:StateView.Action>
+          <Button Command="{Binding RetryCommand}" Content="{wpf:T Items_Retry}" Style="{StaticResource Button.Primary}" />
+        </controls:StateView.Action>
+      </controls:StateView>
+    </Border>
+
+    <!-- Content -->
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Visibility="{Binding ShowContent, Converter={StaticResource BoolToVisibility}}">
+      <StackPanel Margin="0,0,0,4">
+
+        <!-- Real catalogue numbers -->
+        <UniformGrid Columns="4">
+          <controls:StatCard Margin="0,0,8,0" IconName="Box24" Label="{wpf:T Dashboard_ActiveItems}" Value="{Binding ActiveItemsText}" Hint="{Binding ActiveItemsHint}" />
+          <controls:StatCard Margin="8,0" IconName="Grid24" Label="{wpf:T Dashboard_Categories}" Value="{Binding CategoriesText}" Hint="{wpf:T Dashboard_CategoriesHint}" />
+          <controls:StatCard Margin="8,0" IconName="TagMultiple24" Label="{wpf:T Dashboard_Types}" Value="{Binding TypesText}" Hint="{wpf:T Dashboard_TypesHint}" />
+          <controls:StatCard Margin="8,0,0,0" IconName="Apps24" Label="{wpf:T Dashboard_Variants}" Value="{Binding VariantsText}" Hint="{wpf:T Dashboard_VariantsHint}" />
+        </UniformGrid>
+
+        <!-- Breakdowns -->
+        <Grid Margin="0,16,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Border Margin="0,0,8,0" Style="{StaticResource Card}">
+            <StackPanel>
+              <TextBlock Margin="0,0,0,16" Style="{StaticResource Text.Section}" Text="{wpf:T Dashboard_ByCategory}" />
+              <ItemsControl ItemTemplate="{StaticResource BarRowTemplate}" ItemsSource="{Binding CategoryBars}" />
+            </StackPanel>
+          </Border>
+          <Border Grid.Column="1" Margin="8,0,0,0" Style="{StaticResource Card}">
+            <StackPanel>
+              <TextBlock Margin="0,0,0,16" Style="{StaticResource Text.Section}" Text="{Binding RangeTitle}" Visibility="{Binding HasRange, Converter={StaticResource BoolToVisibility}}" />
+              <ItemsControl ItemTemplate="{StaticResource BarRowTemplate}" ItemsSource="{Binding RangeBars}" />
+              <controls:StateView Title="{wpf:T Dashboard_NoRange}" Visibility="{Binding HasRange, Converter={StaticResource InverseBoolToVisibility}}" />
+            </StackPanel>
+          </Border>
+        </Grid>
+
+        <!-- Modules that arrive in later phases: honest empty states, no placeholder numbers -->
+        <UniformGrid Margin="0,16,0,0" Columns="3">
+          <Border Margin="0,0,8,0" Style="{StaticResource Card}">
+            <StackPanel>
+              <TextBlock Style="{StaticResource Text.Section}" Text="{wpf:T Dashboard_SalesTitle}" />
+              <controls:StateView IconName="Receipt24" Title="{wpf:T Common_NotAvailableYet}" Message="{wpf:T Dashboard_SalesEmpty}" />
+            </StackPanel>
+          </Border>
+          <Border Margin="8,0" Style="{StaticResource Card}">
+            <StackPanel>
+              <TextBlock Style="{StaticResource Text.Section}" Text="{wpf:T Dashboard_StockTitle}" />
+              <controls:StateView IconName="ClipboardTaskListLtr24" Title="{wpf:T Common_NotAvailableYet}" Message="{wpf:T Dashboard_StockEmpty}" />
+            </StackPanel>
+          </Border>
+          <Border Margin="8,0,0,0" Style="{StaticResource Card}">
+            <StackPanel>
+              <TextBlock Style="{StaticResource Text.Section}" Text="{wpf:T Dashboard_UdhaarTitle}" />
+              <controls:StateView IconName="Money24" Title="{wpf:T Common_NotAvailableYet}" Message="{wpf:T Dashboard_UdhaarEmpty}" />
+            </StackPanel>
+          </Border>
+        </UniformGrid>
+      </StackPanel>
+    </ScrollViewer>
+  </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+<UserControl
+  x:Class="HassanTraders.Desktop.Common.Controls.StatCard"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+  <!-- KPI tile: label, big number, small hint, icon in a tinted square. -->
+  <Border Style="{StaticResource Card}">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <StackPanel>
+        <TextBlock
+          Style="{StaticResource Text.Secondary}"
+          Text="{Binding Label, RelativeSource={RelativeSource AncestorType=UserControl}}"
+          TextTrimming="CharacterEllipsis"
+          TextWrapping="NoWrap" />
+        <TextBlock
+          Margin="0,6,0,0"
+          Style="{StaticResource Text.Kpi}"
+          Text="{Binding Value, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+        <TextBlock
+          Margin="0,4,0,0"
+          Style="{StaticResource Text.Caption}"
+          Text="{Binding Hint, RelativeSource={RelativeSource AncestorType=UserControl}}"
+          TextTrimming="CharacterEllipsis" />
+      </StackPanel>
+      <Border
+        Grid.Column="1"
+        Width="44"
+        Height="44"
+        VerticalAlignment="Top"
+        Background="{DynamicResource Brush.PrimaryTint}"
+        CornerRadius="10">
+        <ui:SymbolIcon
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Style="{StaticResource Icon.Primary}"
+          Symbol="{Binding IconName, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource SymbolName}}" />
+      </Border>
+    </Grid>
+  </Border>
+</UserControl>

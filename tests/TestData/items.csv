@@ -1,0 +1,42 @@
+Category,CategoryUrdu,ProductType,ProductTypeUrdu,Name,NameUrdu,Brand,Barcode,Unit,PackSizeBaseUnits,CostPaisa,SalePaisa,ReorderBaseUnits,VariantName,VariantPackSizeBaseUnits,VariantCostPaisa,VariantSalePaisa
+Snacks,نمکو اور اسنیکس,,,Lays Classic,لیز کلاسک,Lays,,Piece,1,1800,2000,12,Rs 20,1,1800,2000
+Snacks,نمکو اور اسنیکس,,,Lays Classic,لیز کلاسک,Lays,,Piece,1,1800,2000,12,Rs 50,1,4500,5000
+Snacks,نمکو اور اسنیکس,,,Lays Classic,لیز کلاسک,Lays,,Piece,1,1800,2000,12,Rs 70,1,6400,7000
+Snacks,نمکو اور اسنیکس,,,Lays Classic,لیز کلاسک,Lays,,Piece,1,1800,2000,12,Rs 100,1,9200,10000
+Snacks,نمکو اور اسنیکس,,,Cheetos Rs 20,چیٹوز ۲۰ روپے,Cheetos,,Piece,1,1800,2000,12
+Spices,مصالحہ جات,,,Shan Biryani Masala,شان بریانی مصالحہ,Shan,,Piece,1,16000,18000,12
+Spices,مصالحہ جات,,,National Tikka Masala,نیشنل تکہ مصالحہ,National,,Piece,1,15000,17000,12
+Spices,مصالحہ جات,,,Swaad Achari Masala,سواد اچاری مصالحہ,Swaad,,Piece,1,12000,14000,12
+Tea and pantry,چائے اور راشن,,,Lipton Tea 430 g,لپٹن چائے ۴۳۰ گرام,Lipton,,Gram,430,105000,115000,4300
+Tea and pantry,چائے اور راشن,,,Habibi Vinegar 500 mL,حبیبی سرکہ ۵۰۰ ملی لیٹر,Habibi,,Millilitre,500,9000,11000,500
+Tea and pantry,چائے اور راشن,,,Soya Sauce 350 mL,سویا ساس ۳۵۰ ملی لیٹر,, ,Millilitre,350,12000,14000,350
+Tea and pantry,چائے اور راشن,,,Desi Ghee 900 g,دیسی گھی ۹۰۰ گرام,, ,Gram,900,450000,480000,900
+Tea and pantry,چائے اور راشن,,,Apple Jam 440 g,سیب کا جام ۴۴۰ گرام,, ,Gram,440,17000,19000,440
+Tea and pantry,چائے اور راشن,,,Tapal Danedar 190 g,ٹپال دانے دار ۱۹۰ گرام,Tapal,,Gram,190,42000,45000,1900
+Tea and pantry,چائے اور راشن,,,National Tomato Ketchup 500 g,نیشنل ٹماٹو کیچپ ۵۰۰ گرام,National,,Gram,500,18000,20000,500
+Tea and pantry,چائے اور راشن,,,Shezan Mango Juice 1 L,شیزان مینگو جوس ۱ لیٹر,Shezan,,Litre,1,14000,16000,1000
+Personal care,ذاتی نگہداشت,,,Lifebuoy Soap,لائف بوائے صابن,Lifebuoy,,Piece,1,9000,10000,12
+Personal care,ذاتی نگہداشت,,,Sunsilk Shampoo 185 mL,سن سلک شیمپو ۱۸۵ ملی لیٹر,Sunsilk,,Millilitre,185,28000,30000,370
+Personal care,ذاتی نگہداشت,,,Bio Amla Shampoo 100 mL,بائیو آملہ شیمپو ۱۰۰ ملی لیٹر,Bio Amla,,Millilitre,100,12000,14000,200
+Personal care,ذاتی نگہداشت,,,Vaseline 100 mL,ویزلین ۱۰۰ ملی لیٹر,Vaseline,,Millilitre,100,20000,22000,200
+Cleaning,صفائی کا سامان,,,Hero Surf 1 kg,ہیرو سرف ۱ کلو,Hero,,Gram,1000,22000,25000,2000
+Cleaning,صفائی کا سامان,,,Surf Excel 500 g,سرف ایکسل ۵۰۰ گرام,Surf Excel,,Gram,500,33000,36000,1000
+Cleaning,صفائی کا سامان,,,Toilet Cleaner 500 mL,ٹوائلٹ کلینر ۵۰۰ ملی لیٹر,, ,Millilitre,500,18000,20000,1000
+Rice,چاول,Premium,پریمیم,Inam Supreme Rice,انعام سپریم چاول,Inam,,Bag,25000,580000,620000,50000
+Rice,چاول,Premium,پریمیم,Inam Premium Rice,انعام پریمیم چاول,Inam,,Bag,25000,550000,590000,50000
+Rice,چاول,Premium,پریمیم,Inam Gold Rice,انعام گولڈ چاول,Inam,,Bag,25000,520000,560000,50000
+Rice,چاول,Superior,اعلیٰ,Inam Kainaat Rice,انعام کائنات چاول,Inam,,Bag,25000,500000,540000,50000
+Rice,چاول,Superior,اعلیٰ,Inam Mughal Rice,انعام مغل چاول,Inam,,Bag,25000,480000,520000,50000
+Rice,چاول,Superior,اعلیٰ,1121 Sella Rice,۱۱۲۱ سیلا چاول,, ,Bag,25000,470000,510000,50000
+Rice,چاول,Middle order,درمیانہ,Inam Classic Rice,انعام کلاسک چاول,Inam,,Bag,25000,430000,470000,50000
+Rice,چاول,Middle order,درمیانہ,PK 386 Sella Rice,پی کے ۳۸۶ سیلا چاول,, ,Bag,25000,410000,450000,50000
+Rice,چاول,Middle order,درمیانہ,Irri-6 Rice,اری ۶ چاول,, ,Bag,25000,380000,420000,50000
+Rice,چاول,Economical,اقتصادی,Irri-9 Rice,اری ۹ چاول,, ,Bag,25000,340000,380000,50000
+Rice,چاول,Economical,اقتصادی,1509 Sella Rice,۱۵۰۹ سیلا چاول,, ,Bag,25000,360000,400000,50000
+Atta and flour,آٹا اور میدہ,,,Inam Multigrain Atta 10 kg,انعام ملٹی گرین آٹا ۱۰ کلو,Inam,,Bag,10000,95000,105000,20000
+Atta and flour,آٹا اور میدہ,,,Chakki Atta 5 kg,چکی آٹا ۵ کلو,, ,Bag,5000,48000,53000,10000
+Atta and flour,آٹا اور میدہ,,,Maida 1 kg,میدہ ۱ کلو,, ,Kilogram,1000,14000,16000,5000
+Dal and sugar,دال اور چینی,,,Daal Mash Loose,دال ماش کھلی,, ,Kilogram,0,32000,36000,10000
+Dal and sugar,دال اور چینی,,,Daal Chana Loose,دال چنا کھلی,, ,Kilogram,0,18000,21000,10000
+Dal and sugar,دال اور چینی,,,Sugar Loose,چینی کھلی,, ,Kilogram,0,15000,17000,25000
+Dal and sugar,دال اور چینی,,,Sugar 50 kg Bag,چینی ۵۰ کلو بوری,, ,Bag,50000,730000,780000,50000

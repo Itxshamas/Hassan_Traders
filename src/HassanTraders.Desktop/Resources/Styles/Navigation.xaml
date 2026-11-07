@@ -1,0 +1,74 @@
+<!-- Sidebar navigation: navy panel, icon + label items, accent bar on the selected item. -->
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style x:Key="Nav.Item" TargetType="ListBoxItem">
+    <Setter Property="Foreground" Value="{DynamicResource Brush.SidebarText}" />
+    <Setter Property="FontSize" Value="{DynamicResource FontSize.Body}" />
+    <Setter Property="FontWeight" Value="Medium" />
+    <Setter Property="Margin" Value="0,2" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ListBoxItem">
+          <Border
+            x:Name="Row"
+            MinHeight="44"
+            Background="Transparent"
+            CornerRadius="8"
+            SnapsToDevicePixels="True">
+            <Grid>
+              <Border
+                x:Name="Accent"
+                Width="3"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Background="{DynamicResource Brush.SidebarAccent}"
+                CornerRadius="2"
+                Visibility="Collapsed" />
+              <ContentPresenter Margin="16,0,12,0" VerticalAlignment="Center" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Row" Property="Background" Value="{DynamicResource Brush.SidebarHover}" />
+              <Setter Property="Foreground" Value="{DynamicResource Brush.SidebarTextActive}" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+              <Setter TargetName="Row" Property="Background" Value="{DynamicResource Brush.SidebarActive}" />
+              <Setter TargetName="Accent" Property="Visibility" Value="Visible" />
+              <Setter Property="Foreground" Value="{DynamicResource Brush.SidebarTextActive}" />
+              <Setter Property="FontWeight" Value="SemiBold" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="Nav.List" TargetType="ListBox">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+    <Setter Property="ItemContainerStyle" Value="{StaticResource Nav.Item}" />
+    <Setter Property="KeyboardNavigation.DirectionalNavigation" Value="Contained" />
+  </Style>
+
+  <!-- Quiet button on the navy sidebar (language, sign out) -->
+  <Style x:Key="Button.Sidebar" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Brush.SidebarBorder}" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush.SidebarText}" />
+    <Setter Property="FontWeight" Value="Medium" />
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.SidebarHover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.SidebarAccent}" />
+        <Setter Property="Foreground" Value="{DynamicResource Brush.SidebarTextActive}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+</ResourceDictionary>

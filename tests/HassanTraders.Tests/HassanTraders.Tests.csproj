@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    The single test project. The app is one WPF project (net10.0-windows) that cannot load on macOS/Linux,
+    so this project compiles the UI-free parts straight from source: Core, application services, Data,
+    ViewModels, localization and the .resx files. XAML, code-behind and Common/ (WPF helpers) stay out.
+    Folders: Domain/, Application/, Infrastructure/, Desktop/ group the tests by layer.
+  -->
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <!-- Must match the app so the .resx manifest name is HassanTraders.Desktop.Resources.Strings. -->
+    <RootNamespace>HassanTraders.Desktop</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="NSubstitute" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="ClosedXML" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\HassanTraders.Desktop\Core\**\*.cs" LinkBase="Core" />
+    <Compile Include="..\..\src\HassanTraders.Desktop\Data\**\*.cs" LinkBase="Data" />
+    <Compile Include="..\..\src\HassanTraders.Desktop\Services\**\*.cs" LinkBase="Services" />
+    <Compile Include="..\..\src\HassanTraders.Desktop\Features\**\*ViewModel.cs" LinkBase="Features" />
+    <Compile Include="..\..\src\HassanTraders.Desktop\Shell\*ViewModel.cs" LinkBase="Shell" />
+    <EmbeddedResource Include="..\..\src\HassanTraders.Desktop\Resources\*.resx" LinkBase="Resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The same sample catalogue seeds the app and tests the import. -->
+    <EmbeddedResource Include="..\TestData\items.csv" Link="Data\Seed\items.csv" />
+    <Content Include="..\TestData\items.csv" Link="TestData\items.csv" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,45 @@
+<UserControl
+  x:Class="HassanTraders.Desktop.Common.Controls.SearchBox"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+  <!-- Search input with leading icon, placeholder and a clear button. Text binds two-way. -->
+  <Grid MinHeight="{DynamicResource Size.Control}">
+    <TextBox
+      x:Name="Input"
+      Padding="40,0,40,0"
+      Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+    <ui:SymbolIcon
+      Margin="12,0,0,0"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Center"
+      IsHitTestVisible="False"
+      Style="{StaticResource Icon.Muted}"
+      Symbol="Search24" />
+    <TextBlock
+      x:Name="Placeholder_"
+      Margin="40,0,40,0"
+      VerticalAlignment="Center"
+      IsHitTestVisible="False"
+      Style="{StaticResource Text.Secondary}"
+      Foreground="{DynamicResource Brush.TextMuted}"
+      Text="{Binding Placeholder, RelativeSource={RelativeSource AncestorType=UserControl}}"
+      TextTrimming="CharacterEllipsis"
+      TextWrapping="NoWrap" />
+    <Button
+      x:Name="Clear"
+      Width="28"
+      MinWidth="28"
+      MinHeight="28"
+      Height="28"
+      Margin="0,0,6,0"
+      Padding="0"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Center"
+      Click="OnClearClick"
+      Style="{StaticResource Button.Ghost}"
+      Visibility="Collapsed">
+      <ui:SymbolIcon Style="{StaticResource Icon.Muted}" FontSize="{DynamicResource Icon.Small}" Symbol="Dismiss24" />
+    </Button>
+  </Grid>
+</UserControl>

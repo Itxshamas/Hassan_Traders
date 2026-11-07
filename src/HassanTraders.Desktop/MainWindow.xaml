@@ -1,0 +1,59 @@
+<ui:FluentWindow
+  x:Class="HassanTraders.Desktop.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  xmlns:infra="clr-namespace:HassanTraders.Desktop.Services"
+  xmlns:wpf="clr-namespace:HassanTraders.Desktop.Common.Helpers"
+  xmlns:login="clr-namespace:HassanTraders.Desktop.Features.Login"
+  xmlns:shell="clr-namespace:HassanTraders.Desktop.Shell"
+  Width="1366"
+  Height="768"
+  MinWidth="1024"
+  MinHeight="640"
+  Background="{DynamicResource Brush.AppBackground}"
+  ExtendsContentIntoTitleBar="True"
+  WindowBackdropType="None"
+  WindowCornerPreference="Round"
+  WindowStartupLocation="CenterScreen"
+  Title="{wpf:T App_Title}">
+
+  <Window.Resources>
+    <DataTemplate DataType="{x:Type login:LoginViewModel}">
+      <login:LoginView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type login:ChangePasswordViewModel}">
+      <login:ChangePasswordView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type shell:ShellViewModel}">
+      <shell:ShellView />
+    </DataTemplate>
+  </Window.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <!-- Title bar stays left-to-right (caption buttons keep their place); it is navy so it joins the sidebar. -->
+    <ui:TitleBar
+      Grid.Row="0"
+      Title="{wpf:T App_Title}"
+      Background="{DynamicResource Brush.Sidebar}"
+      Foreground="{DynamicResource Brush.SidebarTextActive}"
+      ButtonsForeground="{DynamicResource Brush.SidebarTextActive}" />
+
+    <!-- Language drives direction, font, body size and line height for everything below the title bar. -->
+    <Grid
+      Grid.Row="1"
+      Background="{DynamicResource Brush.AppBackground}"
+      FlowDirection="{Binding IsRightToLeft, Source={x:Static infra:LocalizationService.Instance}, Converter={StaticResource BoolToFlowDirection}}"
+      TextElement.FontFamily="{Binding IsRightToLeft, Source={x:Static infra:LocalizationService.Instance}, Converter={StaticResource BoolToFontFamily}}"
+      TextElement.FontSize="{Binding IsRightToLeft, Source={x:Static infra:LocalizationService.Instance}, Converter={StaticResource BoolToFontSize}}"
+      TextElement.Foreground="{DynamicResource Brush.TextPrimary}"
+      TextBlock.LineHeight="{Binding IsRightToLeft, Source={x:Static infra:LocalizationService.Instance}, Converter={StaticResource BoolToLineHeight}}">
+      <ContentControl Content="{Binding Current}" IsTabStop="False" />
+    </Grid>
+  </Grid>
+</ui:FluentWindow>

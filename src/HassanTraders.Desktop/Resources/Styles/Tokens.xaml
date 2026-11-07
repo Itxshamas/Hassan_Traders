@@ -1,0 +1,52 @@
+<!-- Layout, shape, size and elevation tokens. No colours here (see Themes/). -->
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+  <!-- Spacing scale (4 px grid) -->
+  <sys:Double x:Key="Space.1">4</sys:Double>
+  <sys:Double x:Key="Space.2">8</sys:Double>
+  <sys:Double x:Key="Space.3">12</sys:Double>
+  <sys:Double x:Key="Space.4">16</sys:Double>
+  <sys:Double x:Key="Space.5">20</sys:Double>
+  <sys:Double x:Key="Space.6">24</sys:Double>
+  <sys:Double x:Key="Space.8">32</sys:Double>
+
+  <!-- Standard paddings -->
+  <Thickness x:Key="Pad.Page">28,24,28,24</Thickness>
+  <Thickness x:Key="Pad.Card">20</Thickness>
+  <Thickness x:Key="Pad.Control">12,0,12,0</Thickness>
+  <Thickness x:Key="Pad.Button">16,0,16,0</Thickness>
+
+  <!-- Shape -->
+  <CornerRadius x:Key="Radius.Control">6</CornerRadius>
+  <CornerRadius x:Key="Radius.Card">10</CornerRadius>
+  <CornerRadius x:Key="Radius.Dialog">14</CornerRadius>
+  <CornerRadius x:Key="Radius.Pill">11</CornerRadius>
+
+  <!-- Control sizes -->
+  <sys:Double x:Key="Size.Control">40</sys:Double>
+  <sys:Double x:Key="Size.ControlTouch">52</sys:Double>
+  <sys:Double x:Key="Size.Row">44</sys:Double>
+  <sys:Double x:Key="Size.Header">40</sys:Double>
+  <!-- GridLength, not Double: it is used as a ColumnDefinition width -->
+  <GridLength x:Key="Size.Sidebar">232</GridLength>
+
+  <!-- Type scale (see docs/design-system.md) -->
+  <sys:Double x:Key="FontSize.Kpi">28</sys:Double>
+  <sys:Double x:Key="FontSize.Page">24</sys:Double>
+  <sys:Double x:Key="FontSize.Section">18</sys:Double>
+  <sys:Double x:Key="FontSize.Body">14</sys:Double>
+  <sys:Double x:Key="FontSize.Caption">12</sys:Double>
+
+  <!-- Icon sizes (icons are WPF-UI SymbolIcon, Fluent 24 set) -->
+  <sys:Double x:Key="Icon.Small">16</sys:Double>
+  <sys:Double x:Key="Icon.Medium">20</sys:Double>
+  <sys:Double x:Key="Icon.Large">24</sys:Double>
+  <sys:Double x:Key="Icon.Hero">40</sys:Double>
+
+  <!-- Elevation: two levels only -->
+  <DropShadowEffect x:Key="Shadow.Card" BlurRadius="14" ShadowDepth="1" Direction="270" Opacity="0.10" Color="{DynamicResource Color.Shadow}" />
+  <DropShadowEffect x:Key="Shadow.Dialog" BlurRadius="32" ShadowDepth="6" Direction="270" Opacity="0.28" Color="{DynamicResource Color.Shadow}" />
+</ResourceDictionary>

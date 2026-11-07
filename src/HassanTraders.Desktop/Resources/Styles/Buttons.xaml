@@ -1,0 +1,156 @@
+<!--
+  Buttons. The implicit Button style is the Secondary look, so a plain <Button> is already on-brand.
+    Button.Primary    main action of a screen (one per view)
+    Button.Danger     destructive action
+    Button.Ghost      low-emphasis / toolbar action
+    Button.Segment    one choice in a segmented control (set Tag="{Binding IsSelected}")
+    Button.Touch      add to any variant via BasedOn for 52 px touch targets (billing screen)
+-->
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style x:Key="FocusVisual.None">
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Rectangle Margin="-2" Stroke="{DynamicResource Brush.Primary}" StrokeThickness="2" RadiusX="8" RadiusY="8" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Secondary (default) -->
+  <Style TargetType="Button">
+    <Setter Property="Background" Value="{DynamicResource Brush.Surface}" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush.TextPrimary}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Brush.BorderStrong}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FontSize" Value="{DynamicResource FontSize.Body}" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="MinHeight" Value="{DynamicResource Size.Control}" />
+    <Setter Property="MinWidth" Value="40" />
+    <Setter Property="Padding" Value="{DynamicResource Pad.Button}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual.None}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{DynamicResource Radius.Control}"
+            SnapsToDevicePixels="True">
+            <ContentPresenter
+              Margin="{TemplateBinding Padding}"
+              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+              RecognizesAccessKey="True" />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.SurfaceHover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.Primary}" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.PrimaryTint}" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.TextDisabled}" />
+        <Setter Property="Background" Value="{DynamicResource Brush.SurfaceAlt}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.Border}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- Primary -->
+  <Style x:Key="Button.Primary" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="{DynamicResource Brush.Primary}" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush.OnPrimary}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Brush.Primary}" />
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.PrimaryHover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.PrimaryHover}" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.PrimaryPressed}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.PrimaryPressed}" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.TextDisabled}" />
+        <Setter Property="Background" Value="{DynamicResource Brush.Border}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.Border}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- Danger -->
+  <Style x:Key="Button.Danger" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="{DynamicResource Brush.Danger}" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush.OnDanger}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Brush.Danger}" />
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.DangerHover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.DangerHover}" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.DangerHover}" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.TextDisabled}" />
+        <Setter Property="Background" Value="{DynamicResource Brush.Border}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.Border}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- Ghost -->
+  <Style x:Key="Button.Ghost" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush.Primary}" />
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.PrimaryTint}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.PrimaryTint}" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.TextDisabled}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- Segmented choice: Tag=True marks the selected segment -->
+  <Style x:Key="Button.Segment" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Style.Triggers>
+      <Trigger Property="Tag" Value="True">
+        <Setter Property="Background" Value="{DynamicResource Brush.PrimaryTint}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Primary}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- Touch sizing -->
+  <Style x:Key="Button.Touch" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="MinHeight" Value="{DynamicResource Size.ControlTouch}" />
+    <Setter Property="FontSize" Value="16" />
+  </Style>
+  <Style x:Key="Button.PrimaryTouch" TargetType="Button" BasedOn="{StaticResource Button.Primary}">
+    <Setter Property="MinHeight" Value="{DynamicResource Size.ControlTouch}" />
+    <Setter Property="FontSize" Value="16" />
+  </Style>
+</ResourceDictionary>

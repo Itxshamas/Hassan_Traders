@@ -1,0 +1,17 @@
+<!-- Icons are WPF-UI SymbolIcon (Fluent 24 set). Sizes come from Tokens.xaml (Icon.Small/Medium/Large/Hero). -->
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+
+  <Style x:Key="Icon" TargetType="ui:SymbolIcon">
+    <Setter Property="FontSize" Value="{DynamicResource Icon.Medium}" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush.TextSecondary}" />
+  </Style>
+  <Style x:Key="Icon.Primary" TargetType="ui:SymbolIcon" BasedOn="{StaticResource Icon}">
+    <Setter Property="Foreground" Value="{DynamicResource Brush.Primary}" />
+  </Style>
+  <Style x:Key="Icon.Muted" TargetType="ui:SymbolIcon" BasedOn="{StaticResource Icon}">
+    <Setter Property="Foreground" Value="{DynamicResource Brush.TextMuted}" />
+  </Style>
+</ResourceDictionary>

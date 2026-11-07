@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="App_Title" xml:space="preserve"><value>Hassan Traders</value></data>
+  <data name="App_Subtitle" xml:space="preserve"><value>Billing and stock</value></data>
+  <data name="Nav_Dashboard" xml:space="preserve"><value>Dashboard</value></data>
+  <data name="Nav_Billing" xml:space="preserve"><value>Billing</value></data>
+  <data name="Nav_Items" xml:space="preserve"><value>Items</value></data>
+  <data name="Nav_StockCount" xml:space="preserve"><value>Stock count</value></data>
+  <data name="Nav_Purchases" xml:space="preserve"><value>Purchases</value></data>
+  <data name="Nav_Udhaar" xml:space="preserve"><value>Udhaar ledger</value></data>
+  <data name="Nav_Customers" xml:space="preserve"><value>Customers</value></data>
+  <data name="Nav_Reports" xml:space="preserve"><value>Reports</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Login_Title" xml:space="preserve"><value>Sign in</value></data>
+  <data name="Login_Username" xml:space="preserve"><value>Username</value></data>
+  <data name="Login_Password" xml:space="preserve"><value>Password</value></data>
+  <data name="Login_Button" xml:space="preserve"><value>Sign in</value></data>
+  <data name="Login_Busy" xml:space="preserve"><value>Signing in...</value></data>
+  <data name="ChangePw_Title" xml:space="preserve"><value>Choose a new password</value></data>
+  <data name="ChangePw_Hint" xml:space="preserve"><value>This is your first sign-in, or an administrator reset your password. Choose a new password to continue. Use at least 8 characters with a letter and a digit.</value></data>
+  <data name="ChangePw_Current" xml:space="preserve"><value>Current password</value></data>
+  <data name="ChangePw_New" xml:space="preserve"><value>New password</value></data>
+  <data name="ChangePw_Confirm" xml:space="preserve"><value>Confirm new password</value></data>
+  <data name="ChangePw_Button" xml:space="preserve"><value>Save password</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>Settings</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Language</value></data>
+  <data name="Settings_Theme" xml:space="preserve"><value>Theme</value></data>
+  <data name="Settings_InvalidLanguage" xml:space="preserve"><value>That language is not supported.</value></data>
+  <data name="Settings_InvalidTheme" xml:space="preserve"><value>That theme is not supported.</value></data>
+  <data name="Common_English" xml:space="preserve"><value>English</value></data>
+  <data name="Common_Urdu" xml:space="preserve"><value>اردو</value></data>
+  <data name="Common_Light" xml:space="preserve"><value>Light</value></data>
+  <data name="Common_Dark" xml:space="preserve"><value>Dark</value></data>
+  <data name="Common_SignOut" xml:space="preserve"><value>Sign out</value></data>
+  <data name="Common_ComingSoon" xml:space="preserve"><value>This screen is coming in a later phase.</value></data>
+  <data name="Common_ErrorTitle" xml:space="preserve"><value>Something went wrong</value></data>
+  <data name="Common_UnexpectedError" xml:space="preserve"><value>The app hit an unexpected problem. Your data is safe. The details were saved to the log file.</value></data>
+  <data name="Common_StartupErrorTitle" xml:space="preserve"><value>Hassan Traders cannot start</value></data>
+  <data name="Common_StartupError" xml:space="preserve"><value>The database could not be opened. Close other copies of the app and try again. If it keeps happening, contact support and send the log file.</value></data>
+  <data name="Common_AlreadyRunning" xml:space="preserve"><value>Hassan Traders is already open on this computer.</value></data>
+  <data name="Role_Owner" xml:space="preserve"><value>Owner</value></data>
+  <data name="Role_Manager" xml:space="preserve"><value>Manager</value></data>
+  <data name="Role_Cashier" xml:space="preserve"><value>Cashier</value></data>
+  <data name="Role_StoreKeeper" xml:space="preserve"><value>Store keeper</value></data>
+  <data name="Login_Invalid" xml:space="preserve"><value>Wrong username or password.</value></data>
+  <data name="Login_Inactive" xml:space="preserve"><value>This account is switched off. Ask the owner.</value></data>
+  <data name="Validation_UsernameRequired" xml:space="preserve"><value>Type your username.</value></data>
+  <data name="Validation_PasswordRequired" xml:space="preserve"><value>Type the password.</value></data>
+  <data name="Password_TooShort" xml:space="preserve"><value>The new password needs at least 8 characters.</value></data>
+  <data name="Password_NeedsLetterAndDigit" xml:space="preserve"><value>The new password needs at least one letter and one digit.</value></data>
+  <data name="Password_Mismatch" xml:space="preserve"><value>The two new passwords are not the same.</value></data>
+  <data name="Password_SameAsOld" xml:space="preserve"><value>Choose a password different from the current one.</value></data>
+  <data name="Password_CurrentWrong" xml:space="preserve"><value>The current password is not correct.</value></data>
+  <data name="User_NotFound" xml:space="preserve"><value>That user no longer exists.</value></data>
+  <data name="Common_Ok" xml:space="preserve"><value>OK</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Settings_Subtitle" xml:space="preserve"><value>Language and appearance for this computer.</value></data>
+  <data name="Settings_Appearance" xml:space="preserve"><value>Appearance</value></data>
+  <data name="Settings_LanguageHint" xml:space="preserve"><value>Language of screens and menus. Urdu reads right to left.</value></data>
+  <data name="Settings_ThemeHint" xml:space="preserve"><value>Light for bright shops, dark for dim ones.</value></data>
+  <data name="Unit_Piece" xml:space="preserve"><value>Piece</value></data>
+  <data name="Unit_Dozen" xml:space="preserve"><value>Dozen</value></data>
+  <data name="Unit_Carton" xml:space="preserve"><value>Carton</value></data>
+  <data name="Unit_Bag" xml:space="preserve"><value>Bag</value></data>
+  <data name="Pack_Bag" xml:space="preserve"><value>{0} bag</value></data>
+  <data name="Pack_LoosePerKg" xml:space="preserve"><value>Loose, per kg</value></data>
+  <data name="Measure_Kg" xml:space="preserve"><value>{0} kg</value></data>
+  <data name="Measure_G" xml:space="preserve"><value>{0} g</value></data>
+  <data name="Measure_L" xml:space="preserve"><value>{0} L</value></data>
+  <data name="Measure_Ml" xml:space="preserve"><value>{0} mL</value></data>
+  <data name="Measure_Pieces" xml:space="preserve"><value>{0} pcs</value></data>
+  <data name="Status_Active" xml:space="preserve"><value>Active</value></data>
+  <data name="Status_Inactive" xml:space="preserve"><value>Inactive</value></data>
+  <data name="Items_Title" xml:space="preserve"><value>Items</value></data>
+  <data name="Items_Search" xml:space="preserve"><value>Search by Urdu or English name, brand or barcode</value></data>
+  <data name="Items_AllCategories" xml:space="preserve"><value>All categories</value></data>
+  <data name="Items_AllTypes" xml:space="preserve"><value>All types</value></data>
+  <data name="Items_ClearFilters" xml:space="preserve"><value>Clear filters</value></data>
+  <data name="Items_Showing" xml:space="preserve"><value>Showing {0} of {1} items</value></data>
+  <data name="Items_Retry" xml:space="preserve"><value>Try again</value></data>
+  <data name="Items_LoadingTitle" xml:space="preserve"><value>Loading items</value></data>
+  <data name="Items_LoadingMessage" xml:space="preserve"><value>One moment.</value></data>
+  <data name="Items_ErrorTitle" xml:space="preserve"><value>Items could not be loaded</value></data>
+  <data name="Items_ErrorMessage" xml:space="preserve"><value>Your data is safe. Try again, and if it keeps happening send the log file.</value></data>
+  <data name="Items_EmptyTitle" xml:space="preserve"><value>No items yet</value></data>
+  <data name="Items_EmptyMessage" xml:space="preserve"><value>The catalogue is empty. Items appear here once they are imported or added.</value></data>
+  <data name="Items_NoMatchTitle" xml:space="preserve"><value>No items match</value></data>
+  <data name="Items_NoMatchMessage" xml:space="preserve"><value>Try a different name, or clear the filters.</value></data>
+  <data name="Items_ColItem" xml:space="preserve"><value>Item</value></data>
+  <data name="Items_ColCategory" xml:space="preserve"><value>Category</value></data>
+  <data name="Items_ColBrand" xml:space="preserve"><value>Brand</value></data>
+  <data name="Items_ColPack" xml:space="preserve"><value>Pack</value></data>
+  <data name="Items_ColCost" xml:space="preserve"><value>Cost</value></data>
+  <data name="Items_ColPrice" xml:space="preserve"><value>Sale price</value></data>
+  <data name="Items_ColReorder" xml:space="preserve"><value>Reorder at</value></data>
+  <data name="Items_ColStatus" xml:space="preserve"><value>Status</value></data>
+  <data name="Items_Variants" xml:space="preserve"><value>{0} pack sizes</value></data>
+  <data name="Dashboard_Subtitle" xml:space="preserve"><value>Overview of your catalogue.</value></data>
+  <data name="Dashboard_ActiveItems" xml:space="preserve"><value>Active items</value></data>
+  <data name="Dashboard_ActiveItemsHint" xml:space="preserve"><value>{0} inactive</value></data>
+  <data name="Dashboard_AllActive" xml:space="preserve"><value>All items are active</value></data>
+  <data name="Dashboard_Categories" xml:space="preserve"><value>Categories</value></data>
+  <data name="Dashboard_CategoriesHint" xml:space="preserve"><value>Groups of items</value></data>
+  <data name="Dashboard_Types" xml:space="preserve"><value>Types</value></data>
+  <data name="Dashboard_TypesHint" xml:space="preserve"><value>Grades within a category</value></data>
+  <data name="Dashboard_Variants" xml:space="preserve"><value>Pack sizes</value></data>
+  <data name="Dashboard_VariantsHint" xml:space="preserve"><value>Variants of one product</value></data>
+  <data name="Dashboard_ByCategory" xml:space="preserve"><value>Items by category</value></data>
+  <data name="Dashboard_RangeTitle" xml:space="preserve"><value>{0} by type</value></data>
+  <data name="Dashboard_NoRange" xml:space="preserve"><value>No category has types yet.</value></data>
+  <data name="Dashboard_SalesTitle" xml:space="preserve"><value>Today's sales</value></data>
+  <data name="Dashboard_SalesEmpty" xml:space="preserve"><value>Sales totals and bills will appear here once billing is added.</value></data>
+  <data name="Dashboard_StockTitle" xml:space="preserve"><value>Low and out of stock</value></data>
+  <data name="Dashboard_StockEmpty" xml:space="preserve"><value>Stock alerts will appear here once the stock ledger is added.</value></data>
+  <data name="Dashboard_UdhaarTitle" xml:space="preserve"><value>Udhaar due</value></data>
+  <data name="Dashboard_UdhaarEmpty" xml:space="preserve"><value>Customer balances will appear here once the udhaar ledger is added.</value></data>
+  <data name="Dashboard_ErrorTitle" xml:space="preserve"><value>The overview could not be loaded</value></data>
+  <data name="Common_NotAvailableYet" xml:space="preserve"><value>Not available yet</value></data>
+</root>
